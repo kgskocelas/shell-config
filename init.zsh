@@ -7,7 +7,7 @@ if [ -d ~/.shell-config ]; then
 fi
 
 if [ ! -d ~/.shell-config ]; then
-  git clone https://github.com/mmore500/shell-config ~/.shell-config && echo "collected shell-config" || echo "failed to collect shell-config" && exit 1
+  git clone https://github.com/kgskocelas/shell-config ~/.shell-config && echo "collected shell-config" || echo "failed to collect shell-config" && exit 1
 fi
 
 # =============================================================================
@@ -20,7 +20,7 @@ echo                                 SETUP OH-MY-ZSH
 echo                                  SETUP .zshrc
 # =============================================================================
 
-curl -m 10 -L https://raw.githubusercontent.com/mmore500/shell-config/master/init.zsh > ~/.zshrc.remote || echo "curl timeout" && rm -f ~/.zshrc.remote
+curl -m 10 -L https://raw.githubusercontent.com/kgskocelas/shell-config/master/init.zsh > ~/.zshrc.remote || echo "curl timeout" && rm -f ~/.zshrc.remote
 
 if [ -f ~/.zshrc.remote ]; then
   cmp ~/.zshrc ~/.zshrc.remote || cp ~/.zshrc.remote ~/.zshrc && source ~/.zshrc
